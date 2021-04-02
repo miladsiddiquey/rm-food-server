@@ -8,7 +8,7 @@ require('dotenv').config()
 
 
 const app = express()
-const port =process.env.PORT || 5000;
+const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -87,6 +87,6 @@ app.get('/orders',(req,res) => {
 
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
